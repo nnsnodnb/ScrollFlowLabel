@@ -8,27 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CFDFAD5122DC4EB40090CA9E /* ScrollFlowLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDFAD4F22DC4EB40090CA9E /* ScrollFlowLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFDFAD5E22DC4ECF0090CA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDFAD5D22DC4ECF0090CA9E /* AppDelegate.swift */; };
-		CFDFAD6022DC4ECF0090CA9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDFAD5F22DC4ECF0090CA9E /* ViewController.swift */; };
-		CFDFAD6322DC4ECF0090CA9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDFAD6122DC4ECF0090CA9E /* Main.storyboard */; };
-		CFDFAD6522DC4ED00090CA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDFAD6422DC4ED00090CA9E /* Assets.xcassets */; };
-		CFDFAD6822DC4ED00090CA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDFAD6622DC4ED00090CA9E /* LaunchScreen.storyboard */; };
-		CFDFAD6E22DC4EDD0090CA9E /* ScrollFlowLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */; };
 		CFDFAD7022DC4F060090CA9E /* ScrollFlowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDFAD6F22DC4F060090CA9E /* ScrollFlowLabel.swift */; };
+		CFDFAD7222DC50F00090CA9E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDFAD7122DC50F00090CA9E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollFlowLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDFAD4F22DC4EB40090CA9E /* ScrollFlowLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollFlowLabel.h; sourceTree = "<group>"; };
 		CFDFAD5022DC4EB40090CA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFDFAD5B22DC4ECF0090CA9E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFDFAD5D22DC4ECF0090CA9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFDFAD5F22DC4ECF0090CA9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CFDFAD6222DC4ECF0090CA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CFDFAD6422DC4ED00090CA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CFDFAD6722DC4ED00090CA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CFDFAD6922DC4ED00090CA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFDFAD6F22DC4F060090CA9E /* ScrollFlowLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollFlowLabel.swift; sourceTree = "<group>"; };
+		CFDFAD7122DC50F00090CA9E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CFDFAD7C22DEEE340090CA9E /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,14 +29,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFDFAD5822DC4ECF0090CA9E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFDFAD6E22DC4EDD0090CA9E /* ScrollFlowLabel.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,7 +36,7 @@
 			isa = PBXGroup;
 			children = (
 				CFDFAD4E22DC4EB40090CA9E /* ScrollFlowLabel */,
-				CFDFAD5C22DC4ECF0090CA9E /* Example */,
+				CFDFAD7C22DEEE340090CA9E /* Example.playground */,
 				CFDFAD4D22DC4EB40090CA9E /* Products */,
 				CFDFAD6D22DC4EDD0090CA9E /* Frameworks */,
 			);
@@ -64,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */,
-				CFDFAD5B22DC4ECF0090CA9E /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,24 +53,12 @@
 		CFDFAD4E22DC4EB40090CA9E /* ScrollFlowLabel */ = {
 			isa = PBXGroup;
 			children = (
-				CFDFAD4F22DC4EB40090CA9E /* ScrollFlowLabel.h */,
 				CFDFAD6F22DC4F060090CA9E /* ScrollFlowLabel.swift */,
+				CFDFAD7122DC50F00090CA9E /* Extensions.swift */,
+				CFDFAD4F22DC4EB40090CA9E /* ScrollFlowLabel.h */,
 				CFDFAD5022DC4EB40090CA9E /* Info.plist */,
 			);
 			path = ScrollFlowLabel;
-			sourceTree = "<group>";
-		};
-		CFDFAD5C22DC4ECF0090CA9E /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				CFDFAD5D22DC4ECF0090CA9E /* AppDelegate.swift */,
-				CFDFAD5F22DC4ECF0090CA9E /* ViewController.swift */,
-				CFDFAD6122DC4ECF0090CA9E /* Main.storyboard */,
-				CFDFAD6422DC4ED00090CA9E /* Assets.xcassets */,
-				CFDFAD6622DC4ED00090CA9E /* LaunchScreen.storyboard */,
-				CFDFAD6922DC4ED00090CA9E /* Info.plist */,
-			);
-			path = Example;
 			sourceTree = "<group>";
 		};
 		CFDFAD6D22DC4EDD0090CA9E /* Frameworks */ = {
@@ -131,23 +100,6 @@
 			productReference = CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CFDFAD5A22DC4ECF0090CA9E /* Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CFDFAD6A22DC4ED00090CA9E /* Build configuration list for PBXNativeTarget "Example" */;
-			buildPhases = (
-				CFDFAD5722DC4ECF0090CA9E /* Sources */,
-				CFDFAD5822DC4ECF0090CA9E /* Frameworks */,
-				CFDFAD5922DC4ECF0090CA9E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Example;
-			productName = Example;
-			productReference = CFDFAD5B22DC4ECF0090CA9E /* Example.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,9 +113,6 @@
 					CFDFAD4B22DC4EB40090CA9E = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
-					};
-					CFDFAD5A22DC4ECF0090CA9E = {
-						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -181,7 +130,6 @@
 			projectRoot = "";
 			targets = (
 				CFDFAD4B22DC4EB40090CA9E /* ScrollFlowLabel */,
-				CFDFAD5A22DC4ECF0090CA9E /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -194,16 +142,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFDFAD5922DC4ECF0090CA9E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFDFAD6822DC4ED00090CA9E /* LaunchScreen.storyboard in Resources */,
-				CFDFAD6522DC4ED00090CA9E /* Assets.xcassets in Resources */,
-				CFDFAD6322DC4ECF0090CA9E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,38 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDFAD7022DC4F060090CA9E /* ScrollFlowLabel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CFDFAD5722DC4ECF0090CA9E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFDFAD6022DC4ECF0090CA9E /* ViewController.swift in Sources */,
-				CFDFAD5E22DC4ECF0090CA9E /* AppDelegate.swift in Sources */,
+				CFDFAD7222DC50F00090CA9E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CFDFAD6122DC4ECF0090CA9E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFDFAD6222DC4ECF0090CA9E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CFDFAD6622DC4ED00090CA9E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFDFAD6722DC4ED00090CA9E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CFDFAD5222DC4EB40090CA9E /* Debug */ = {
@@ -375,11 +286,13 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 99649YXF6E;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ScrollFlowLabel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,11 +314,13 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 99649YXF6E;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ScrollFlowLabel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,42 +329,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = moe.nnsnodnb.ScrollFlowLabel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CFDFAD6B22DC4ED00090CA9E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99649YXF6E;
-				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.nnsnodnb.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CFDFAD6C22DC4ED00090CA9E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99649YXF6E;
-				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.nnsnodnb.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -472,15 +351,6 @@
 			buildConfigurations = (
 				CFDFAD5522DC4EB40090CA9E /* Debug */,
 				CFDFAD5622DC4EB40090CA9E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CFDFAD6A22DC4ED00090CA9E /* Build configuration list for PBXNativeTarget "Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CFDFAD6B22DC4ED00090CA9E /* Debug */,
-				CFDFAD6C22DC4ED00090CA9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
