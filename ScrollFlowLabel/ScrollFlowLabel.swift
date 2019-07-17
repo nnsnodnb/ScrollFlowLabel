@@ -173,7 +173,7 @@ public class ScrollFlowLabel: UIView {
 
 extension ScrollFlowLabel {
 
-    public func observeNotifications() {
+    public func observeApplicationState() {
         NotificationCenter.default.removeObserver(self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(receiveWillEnterForegroundNotification(_:)),

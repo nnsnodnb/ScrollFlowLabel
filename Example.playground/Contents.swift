@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         label.pauseInterval = 2
         label.scrollDirection = .left
         label.scrollSpeed = 20
-        label.observeNotifications()
+        label.observeApplicationState()
         return label
     }()
 

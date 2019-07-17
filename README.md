@@ -28,7 +28,7 @@ label.font = .systemFont(ofSize: 20)
 label.pauseInterval = 2
 label.scrollDirection = .left
 label.scrollSpeed = 20
-label.observeNotifications() // If you want to observe UIApplicationState.
+label.observeApplicationState() // If you want to observe UIApplicationState.
 ```
 
 Please see Example.playground.
