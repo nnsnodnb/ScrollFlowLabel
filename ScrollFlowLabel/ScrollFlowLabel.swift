@@ -36,7 +36,8 @@ public class ScrollFlowLabel: UIView {
             return mainLabel.text
         }
         set {
-            setText(newValue, refresh: true)
+            labels.forEach { $0.text = newValue }
+            refresh()
         }
     }
     @IBInspectable public var attributedText: NSAttributedString? {
@@ -44,7 +45,8 @@ public class ScrollFlowLabel: UIView {
             return mainLabel.attributedText
         }
         set {
-            setAttributedText(newValue, refresh: true)
+            labels.forEach { $0.attributedText = newValue }
+            refresh()
         }
     }
     @IBInspectable public var textColor: UIColor {
@@ -71,6 +73,7 @@ public class ScrollFlowLabel: UIView {
             labels.forEach { $0.shadowOffset = newValue }
         }
     }
+    @IBInspectable public var textAlignment: NSTextAlignment = .left
 
     public var font: UIFont {
         get {
@@ -87,8 +90,9 @@ public class ScrollFlowLabel: UIView {
             updateScrollLabelIfNeeded()
         }
     }
-    @IBInspectable public var textAlignment: NSTextAlignment = .left
     public var animationOptions: UIView.AnimationOptions = [.curveLinear]
+
+    // MARK: - Private Property
 
     private var scrolling: Bool = false
 
@@ -121,11 +125,17 @@ public class ScrollFlowLabel: UIView {
     // MARK: - Override Properties
 
     public override var frame: CGRect {
-        didSet { didChangeFrame() }
+        didSet {
+            refresh()
+            applyGradientMask(for: fadeLength, enableFade: scrolling)
+        }
     }
 
     public override var bounds: CGRect {
-        didSet { didChangeFrame() }
+        didSet {
+            refresh()
+            applyGradientMask(for: fadeLength, enableFade: scrolling)
+        }
     }
 
     // MARK: - Override Method
@@ -171,57 +181,19 @@ extension ScrollFlowLabel {
         NotificationCenter.default.addObserver(self, selector: #selector(receiveDidBecomeActiveNotification(_:)),
                                                name: UIApplication.didBecomeActiveNotification, object: nil)
     }
+}
 
-    @objc public func updateScrollLabelIfNeeded() {
-        if let text = text, text.isEmpty { return }
+// MARK: - Private Method
 
-        let labelWidth = mainLabel.bounds.width
-        if labelWidth <= bounds.width { return }
+extension ScrollFlowLabel {
 
-        NSObject.cancelPreviousPerformRequests(withTarget: self,
-                                               selector: #selector(updateScrollLabelIfNeeded),
-                                               object: nil)
-        NSObject.cancelPreviousPerformRequests(withTarget: self,
-                                               selector: #selector(enableShadow),
-                                               object: nil)
-
-        scrollView.layer.removeAllAnimations()
-
-        switch scrollDirection {
-        case .left:
-            scrollView.contentOffset = .zero
-        case .right:
-            scrollView.contentOffset = .init(x: labelWidth + CGFloat(labelSpacing), y: 0)
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + pauseInterval) { [weak self] in
-            self?.enableShadow()
-        }
-
-        let duration = CGFloat(labelWidth) / scrollSpeed
-        let options: UIView.AnimationOptions = [animationOptions, .allowUserInteraction]
-
-        UIView.animate(
-            withDuration: TimeInterval(duration), delay: pauseInterval, options: options,
-            animations: { [unowned self] in
-                switch self.scrollDirection {
-                case .left:
-                    self.scrollView.contentOffset = .init(x: labelWidth + CGFloat(self.labelSpacing), y: 0)
-                case .right:
-                    self.scrollView.contentOffset = .zero
-                }
-        }, completion: { [weak self] (finished) in
-            guard let wself = self else { return }
-            wself.scrolling = false
-
-            wself.applyGradientMask(for: wself.fadeLength, enableFade: false)
-
-            if !finished { return }
-            wself.updateScrollLabelIfNeeded()
-        })
+    private func commonInit() {
+        isUserInteractionEnabled = false
+        backgroundColor = .clear
+        clipsToBounds = true
     }
 
-    public func refresh() {
+    private func refresh() {
         var offset: CGFloat = 0
 
         labels.forEach { (label) in
@@ -262,12 +234,7 @@ extension ScrollFlowLabel {
         }
     }
 
-    public func didChangeFrame() {
-        refresh()
-        applyGradientMask(for: fadeLength, enableFade: scrolling)
-    }
-
-    public func applyGradientMask(for fadeLength: CGFloat, enableFade isEnabled: Bool) {
+    private func applyGradientMask(for fadeLength: CGFloat, enableFade isEnabled: Bool) {
         let labelWidth = mainLabel.bounds.width
 
         if labelWidth <= bounds.width {
@@ -309,31 +276,59 @@ extension ScrollFlowLabel {
             rightFadePoint = 1
         }
     }
-}
-
-// MARK: - Private Method
-
-extension ScrollFlowLabel {
-
-    private func setText(_ text: String?, refresh isRefresh: Bool) {
-        labels.forEach { $0.text = text }
-        if isRefresh { refresh() }
-    }
-
-    private func setAttributedText(_ text: NSAttributedString?, refresh isRefresh: Bool) {
-        labels.forEach { $0.attributedText = text }
-        if isRefresh { refresh() }
-    }
-
-    private func commonInit() {
-        isUserInteractionEnabled = false
-        backgroundColor = .clear
-        clipsToBounds = true
-    }
 
     @objc private func enableShadow() {
         scrolling = true
         applyGradientMask(for: fadeLength, enableFade: scrolling)
+    }
+
+    @objc private func updateScrollLabelIfNeeded() {
+        if let text = text, text.isEmpty { return }
+
+        let labelWidth = mainLabel.bounds.width
+        if labelWidth <= bounds.width { return }
+
+        NSObject.cancelPreviousPerformRequests(withTarget: self,
+                                               selector: #selector(updateScrollLabelIfNeeded),
+                                               object: nil)
+        NSObject.cancelPreviousPerformRequests(withTarget: self,
+                                               selector: #selector(enableShadow),
+                                               object: nil)
+
+        scrollView.layer.removeAllAnimations()
+
+        switch scrollDirection {
+        case .left:
+            scrollView.contentOffset = .zero
+        case .right:
+            scrollView.contentOffset = .init(x: labelWidth + CGFloat(labelSpacing), y: 0)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + pauseInterval) { [weak self] in
+            self?.enableShadow()
+        }
+
+        let duration = CGFloat(labelWidth) / scrollSpeed
+        let options: UIView.AnimationOptions = [animationOptions, .allowUserInteraction]
+
+        UIView.animate(
+            withDuration: TimeInterval(duration), delay: pauseInterval, options: options,
+            animations: { [unowned self] in
+                switch self.scrollDirection {
+                case .left:
+                    self.scrollView.contentOffset = .init(x: labelWidth + CGFloat(self.labelSpacing), y: 0)
+                case .right:
+                    self.scrollView.contentOffset = .zero
+                }
+            }, completion: { [weak self] (finished) in
+                guard let wself = self else { return }
+                wself.scrolling = false
+
+                wself.applyGradientMask(for: wself.fadeLength, enableFade: false)
+
+                if !finished { return }
+                wself.updateScrollLabelIfNeeded()
+        })
     }
 }
 
