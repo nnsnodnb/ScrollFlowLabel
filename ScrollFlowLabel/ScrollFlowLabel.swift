@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 public class ScrollFlowLabel: UIView {
 
     @objc public enum ScrollDirection: Int {
@@ -17,14 +18,14 @@ public class ScrollFlowLabel: UIView {
 
     // MARK: - Changeable Properties
 
-    @IBInspectable public var scrollSpeed: CGFloat = .defaultPixelsPerSecond { // default is 30.
+    @IBInspectable public var scrollSpeed: CGFloat = 30 { // default is 30.
         didSet {
             updateScrollLabelIfNeeded()
         }
     }
-    @IBInspectable public var pauseInterval: TimeInterval = .defaultPauseTime // default is 1.5.
-    @IBInspectable public var labelSpacing: UInt = .defaultLabelBufferSpace // default is 20.
-    @IBInspectable public var fadeLength: CGFloat = .defaultFadeLength { // default is 7.
+    @IBInspectable public var pauseInterval: TimeInterval = 1.5 // default is 1.5.
+    @IBInspectable public var labelSpacing: UInt = 20 // default is 20.
+    @IBInspectable public var fadeLength: CGFloat = 7 { // default is 7.
         didSet {
             if oldValue == fadeLength { return }
             refresh()
@@ -99,7 +100,7 @@ public class ScrollFlowLabel: UIView {
     // MARK: - Get Only Private Properties
 
     private lazy var labels: [UILabel] = {
-        return (0..<UInt.labelCount).map { (_) in
+        return (0..<2).map { (_) in
             let label = UILabel()
             label.backgroundColor = .clear
             label.autoresizingMask = autoresizingMask
@@ -108,7 +109,7 @@ public class ScrollFlowLabel: UIView {
         }
     }()
     private lazy var scrollView: UIScrollView! = {
-        let scrollView = UIScrollView()
+        let scrollView = UIScrollView(frame: self.bounds)
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         scrollView.backgroundColor = .clear
         scrollView.showsVerticalScrollIndicator = false
