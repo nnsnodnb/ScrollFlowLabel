@@ -17,6 +17,20 @@ github "nnsnodnb/ScrollFlowLabel" ~> 1.0.0
 
 ## Example
 
+### Write source
+
+```swift
+let label = ScrollFlowLabel()
+label.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor..."
+label.textColor = .black
+label.textAlignment = .left
+label.font = .systemFont(ofSize: 20)
+label.pauseInterval = 2
+label.scrollDirection = .left
+label.scrollSpeed = 20
+label.observeNotifications() // If you want to observe UIApplicationState.
+```
+
 Please see Example.playground.
 
 ## LICENSE
