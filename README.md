@@ -1,11 +1,20 @@
-# ScrollFlowLabel
+<img src="Resources/ScrollFlowLabelDemo.gif" height="350" align="right">
 
-[![Swift 5.0.1](https://img.shields.io/badge/language-Swift%205.0.1-orange.svg)](https://developer.apple.com/swift)
-![GitHub](https://img.shields.io/github/license/nnsnodnb/ScrollFlowLabel.svg)
+<h1 align="center">ScrollFlowLabel</h1>
 
-![Demo](Resources/ScrollFlowLabelDemo.gif)
+<h4 align="center">
+  Display long text on UILabel while scrolling automatically.
+</h4>
 
-Display long text on UILabel while scrolling automatically.
+<p align="center">
+  <a href="https://developer.apple.com/swift" target="_blank" ref="noopener">
+    <img src="https://img.shields.io/badge/language-Swift%205.0.1-orange.svg" alt="Swift 5.0.1">
+  </a>
+  <img = src="https://img.shields.io/github/license/nnsnodnb/ScrollFlowLabel.svg" alt="MIT License">
+  <a href="https://github.com/nnsnodnb/ScrollFlowLabel/releases/latest" target="_blank" ref="noopener">
+    <img alt="Release" src="https://img.shields.io/github/release/nnsnodnb/ScrollFlowLabel.svg">
+  </a>
+</p>
 
 ## Installation
 
@@ -31,7 +40,9 @@ label.scrollSpeed = 20
 label.observeApplicationState() // If you want to observe UIApplicationState.
 ```
 
-Please see Example.playground.
+### Interface Builder
+
+Set **UIView** to any place and change Custom Class to **ScrollFlowLabel**.
 
 ## LICENSE
 
