@@ -18,6 +18,12 @@
 
 ## Installation
 
+### CocoaPods
+
+```ruby
+pod 'ScrollFlowLabel'
+```
+
 ### Carthage
 
 ```
