@@ -21,4 +21,4 @@ jobs:
         bundler-cache: true
 
     - name: Lint
-      run: bundel exec pod spec lint ScrollFlowLabel.podspec
+      run: bundle exec pod spec lint ScrollFlowLabel.podspec
