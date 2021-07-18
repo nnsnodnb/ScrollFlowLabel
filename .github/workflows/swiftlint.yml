@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: Apple-Actions/actions-swiftlint@409825d
+    - uses: Apple-Actions/action-swiftlint@409825d
       with:
         reporter: github-pr-review
         level: warning
