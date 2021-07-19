@@ -17,7 +17,6 @@
 		CFDFAD8E22DF0DDC0090CA9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDFAD8C22DF0DDC0090CA9E /* LaunchScreen.storyboard */; };
 		CFDFAD9322DF0DF60090CA9E /* ScrollFlowLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */; };
 		CFDFAD9422DF0DF60090CA9E /* ScrollFlowLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D79FC2F70121C779E9AB7AFF /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8442912861EAC6DA0CF405 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		17FFAB9A390DC151986AF859 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1D59753451169E33A1E8FAA9 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		464FB26987ABFFB7362C63F7 /* Pods-ScrollFlowLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollFlowLabel.release.xcconfig"; path = "Target Support Files/Pods-ScrollFlowLabel/Pods-ScrollFlowLabel.release.xcconfig"; sourceTree = "<group>"; };
 		4799DDE71821004E941D5AD1 /* Pods-ScrollFlowLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrollFlowLabel.debug.xcconfig"; path = "Target Support Files/Pods-ScrollFlowLabel/Pods-ScrollFlowLabel.debug.xcconfig"; sourceTree = "<group>"; };
-		CD8442912861EAC6DA0CF405 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDFAD4C22DC4EB40090CA9E /* ScrollFlowLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollFlowLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDFAD4F22DC4EB40090CA9E /* ScrollFlowLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollFlowLabel.h; sourceTree = "<group>"; };
 		CFDFAD5022DC4EB40090CA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDFAD9322DF0DF60090CA9E /* ScrollFlowLabel.framework in Frameworks */,
-				D79FC2F70121C779E9AB7AFF /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +84,6 @@
 		B6F31F457243399C1D2C28DA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17FFAB9A390DC151986AF859 /* Pods-Example.debug.xcconfig */,
-				1D59753451169E33A1E8FAA9 /* Pods-Example.release.xcconfig */,
 				4799DDE71821004E941D5AD1 /* Pods-ScrollFlowLabel.debug.xcconfig */,
 				464FB26987ABFFB7362C63F7 /* Pods-ScrollFlowLabel.release.xcconfig */,
 			);
@@ -130,7 +123,6 @@
 		CFDFAD6D22DC4EDD0090CA9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD8442912861EAC6DA0CF405 /* Pods_Example.framework */,
 				FC25B5FD4E21AE480E33A6FF /* Pods_ScrollFlowLabel.framework */,
 			);
 			name = Frameworks;
@@ -188,7 +180,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFDFAD9022DF0DDC0090CA9E /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				887919C1B8ED257B9D451E56 /* [CP] Check Pods Manifest.lock */,
 				CFDFAD7D22DF0DDB0090CA9E /* Sources */,
 				CFDFAD7E22DF0DDB0090CA9E /* Frameworks */,
 				CFDFAD7F22DF0DDB0090CA9E /* Resources */,
@@ -279,28 +270,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ScrollFlowLabel-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		887919C1B8ED257B9D451E56 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,7 +523,6 @@
 		};
 		CFDFAD9122DF0DDC0090CA9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FFAB9A390DC151986AF859 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -574,7 +542,6 @@
 		};
 		CFDFAD9222DF0DDC0090CA9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D59753451169E33A1E8FAA9 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
