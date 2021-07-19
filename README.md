@@ -30,6 +30,25 @@ pod 'ScrollFlowLabel'
 github "nnsnodnb/ScrollFlowLabel" ~> 1.0.0
 ```
 
+### Swift Package Manager
+
+```swift
+// swift-tools-version:5.0
+import PackageDescription
+
+let package = Package(
+    name: "SampleApp",
+    dependencies: [
+        .package(name: "ScrollFlowLabel",
+                 url: "https://github.com/nnsnodnb/ScrollFlowLabel.git",
+                 from: "1.0.0")
+    ],
+    targets: [
+        .target(name: "SampleApp", dependencies: ["ScrollFlowLabel"])
+    ]
+)
+```
+
 ## Example
 
 ### Write source
