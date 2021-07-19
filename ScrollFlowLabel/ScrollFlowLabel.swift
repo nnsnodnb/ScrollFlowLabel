@@ -23,7 +23,7 @@ public class ScrollFlowLabel: UIView {
             updateScrollLabelIfNeeded()
         }
     }
-    @IBInspectable public var pauseInterval: TimeInterval = 1.5 // default is 1.5.
+    @IBInspectable public var pauseInterval: Double = 1.5 // default is 1.5.
     @IBInspectable public var labelSpacing: UInt = 20 // default is 20.
     @IBInspectable public var fadeLength: CGFloat = 7 { // default is 7.
         didSet {
@@ -38,15 +38,6 @@ public class ScrollFlowLabel: UIView {
         }
         set {
             labels.forEach { $0.text = newValue }
-            refresh()
-        }
-    }
-    @IBInspectable public var attributedText: NSAttributedString? {
-        get {
-            return mainLabel.attributedText
-        }
-        set {
-            labels.forEach { $0.attributedText = newValue }
             refresh()
         }
     }
@@ -74,8 +65,17 @@ public class ScrollFlowLabel: UIView {
             labels.forEach { $0.shadowOffset = newValue }
         }
     }
-    @IBInspectable public var textAlignment: NSTextAlignment = .left
 
+    public var attributedText: NSAttributedString? {
+        get {
+            return mainLabel.attributedText
+        }
+        set {
+            labels.forEach { $0.attributedText = newValue }
+            refresh()
+        }
+    }
+    public var textAlignment: NSTextAlignment = .left
     public var font: UIFont {
         get {
             return mainLabel.font
@@ -100,7 +100,7 @@ public class ScrollFlowLabel: UIView {
     // MARK: - Get Only Private Properties
 
     private lazy var labels: [UILabel] = {
-        return (0..<2).map { (_) in
+        return (0..<2).map { _ in
             let label = UILabel()
             label.backgroundColor = .clear
             label.autoresizingMask = autoresizingMask
@@ -172,9 +172,9 @@ public class ScrollFlowLabel: UIView {
 
 // MARK: - Public Method
 
-extension ScrollFlowLabel {
+public extension ScrollFlowLabel {
 
-    public func observeApplicationState() {
+    func observeApplicationState() {
         NotificationCenter.default.removeObserver(self)
 
         NotificationCenter.default.addObserver(self, selector: #selector(receiveWillEnterForegroundNotification(_:)),
@@ -186,18 +186,18 @@ extension ScrollFlowLabel {
 
 // MARK: - Private Method
 
-extension ScrollFlowLabel {
+private extension ScrollFlowLabel {
 
-    private func commonInit() {
+    func commonInit() {
         isUserInteractionEnabled = false
         backgroundColor = .clear
         clipsToBounds = true
     }
 
-    private func refresh() {
+    func refresh() {
         var offset: CGFloat = 0
 
-        labels.forEach { (label) in
+        labels.forEach { label in
             label.sizeToFit()
             var frame = label.frame
             frame.origin = .init(x: offset, y: 0)
@@ -321,7 +321,7 @@ extension ScrollFlowLabel {
                 case .right:
                     self.scrollView.contentOffset = .zero
                 }
-            }, completion: { [weak self] (finished) in
+            }, completion: { [weak self] finished in
                 guard let wself = self else { return }
                 wself.scrolling = false
 
@@ -329,7 +329,8 @@ extension ScrollFlowLabel {
 
                 if !finished { return }
                 wself.updateScrollLabelIfNeeded()
-        })
+            }
+        )
     }
 }
 

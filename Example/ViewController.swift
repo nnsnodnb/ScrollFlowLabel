@@ -6,8 +6,8 @@
 //  Copyright © 2019 Yuya Oka. All rights reserved.
 //
 
-import UIKit
 import ScrollFlowLabel
+import UIKit
 
 final class ViewController: UIViewController {
 
