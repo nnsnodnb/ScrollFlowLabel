@@ -39,7 +39,9 @@ import PackageDescription
 let package = Package(
     name: "SampleApp",
     dependencies: [
-        .package(url: "https://github.com/nnsnodnb/ScrollFlowLabel.git, from: "1.0.0")
+        .package(name: "ScrollFlowLabel",
+                 url: "https://github.com/nnsnodnb/ScrollFlowLabel.git",
+                 from: "1.0.0")
     ],
     targets: [
         .target(name: "SampleApp", dependencies: ["ScrollFlowLabel"])
