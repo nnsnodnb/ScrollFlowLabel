@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                  = "ScrollFlowLabel"
-  spec.version               = "1.0.0"
+  spec.version               = "1.0.1"
   spec.summary               = "Display long text on UILabel while scrolling automatically."
   spec.homepage              = "https://github.com/nnsnodnb/ScrollFlowLabel"
   spec.swift_version         = "5.0.1"
