@@ -18,7 +18,7 @@ jobs:
       with:
         bundler-cache: true
 
-    - name: Lint
+    - name: Trunk push
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
       run: bundle exec pod trunk push ScrollFlowLabel.podspec
