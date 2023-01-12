@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "ScrollFlowLabel",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v11)
     ],
     products: [
         .library(name: "ScrollFlowLabel", targets: ["ScrollFlowLabel"])
